@@ -5,14 +5,9 @@ import './App.css';
 import Header from './header';
 import Footer from './footer';
 
-
-
-
 function App() {
 
   let [state,setState]=useState("log")
-
-
 
   function Login(){
     return <div>  <Header/>
@@ -34,7 +29,8 @@ function App() {
      </div></div> 
     <Footer/>
      </div>
-  }
+  
+}
 
   function Signup(){
 
