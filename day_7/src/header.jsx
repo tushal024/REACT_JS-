@@ -31,6 +31,7 @@ function Header(){
                 <a href="">Flights <i className="fa-solid fa-angle-down fa-2xs text-[gray]"></i></a>
                 <a href="">Offer Zone <i className="fa-solid fa-angle-down fa-2xs text-[gray]"></i></a>
             </div>
+           
         </header>
     )
 }

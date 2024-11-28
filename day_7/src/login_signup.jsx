@@ -8,6 +8,10 @@ function Login() {
     let [Username,setusername]= useState("")
     let [email,setemail]= useState("")
     let[Password,setpassword]=useState("")
+
+    let [Lemail,setLemail]= useState("")
+    let[LPassword,setLpassword]=useState("")
+
     let [arr,setarr]=useState([])
 
 
@@ -22,20 +26,37 @@ function Login() {
             email,
             Password        
         }
-
-
         setarr([...arr,obj])
+
+        alert("data Add")
         console.log(arr);
 
-
+        setop([...op , op.length+1])
         
+        setemail("")
+        setusername('')
+        setpassword("")
 
-        setop([...op, op.length+1])
+    //  setcheck("done")
         
     }
 
+
+function Data_match(){
    
-   
+     let Tt = arr.filter((e)=>{
+        
+        if(e.email== Lemail && e.Password== LPassword){
+            alert("Log in Success....")
+
+        }
+        else{
+            alert("Unsuccess..............")
+        }
+    })
+
+}
+
     return (<>
         {check == "done" ? 
         <div> <Header/>
@@ -46,18 +67,17 @@ function Login() {
  <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png" alt="" />
 </div>
 <div className='logB'>
- <form action="">
-   <input type="text" placeholder='Enter Your Email...'  />
-   <input type="text" placeholder='Enter Your Password...'/>
+
+   <input type="text" placeholder='Enter Your Email...'     onChange={(e)=>{setLemail(e.target.value)}}  />
+   <input type="text" placeholder='Enter Your Password...'    onChange={(e)=>{setLpassword(e.target.value)}} />
    <p>By continuing, you agree to Flipkart's <span className='text-[#2874F0]'>Terms of Use</span> and <span className='text-[#2874F0]'>Privacy Policy.</span></p>
-   <button className='submit'>Request OTP</button>
+   <button className='submit' onClick={Data_match}>Request OTP</button>
    <br/>
    <button className='loginbutton' onClick={()=>setcheck("ok")} >New to Flipkart? Create an account</button>
   
- </form>
-</div>     </div> <Footer/>
 
-          
+</div>     </div> <Footer/>
+    
         </div> :
 <> <Header/>
 <div className='signup relative '>
@@ -67,14 +87,11 @@ function Login() {
   <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png" alt="" />
 </div>
 
-
-
-
 <div className='signB'>
  
-    <input type="text"  placeholder='Enter Your Username...'     onChange={(e)=>setusername(e.target.value)}   />
-    <input type="text" placeholder='Enter Your Email...'    onChange={(e)=>setemail(e.target.value)}   />
-    <input type="password" placeholder='Enter Your Password...'    onChange={(e)=>setpassword(e.target.value)}   />
+    <input type="text"  placeholder='Enter Your Username...'  value={Username}   onChange={(e)=>setusername(e.target.value)}   />
+    <input type="text" placeholder='Enter Your Email...'    value={email}  onChange={(e)=>setemail(e.target.value)}   />
+    <input type="password" placeholder='Enter Your Password...'  value={Password}   onChange={(e)=>setpassword(e.target.value)}   />
     <p>By continuing, you agree to Flipkart's <span className='text-[#2874F0]'>Terms of Use</span> and <span className='text-[#2874F0]'>Privacy Policy.</span></p>
     <button className='submit' onClick={data}   >COUNTINUE</button>
 
