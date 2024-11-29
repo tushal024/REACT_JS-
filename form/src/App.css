@@ -1,0 +1,74 @@
+
+
+
+body{
+  color: white;
+  background-image: url(https://png.pngtree.com/background/20210711/original/pngtree-ancient-poet-poetry-lyrics-large-size-background-picture-image_1112884.jpg);
+  height: 78vh;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  background-size: cover;
+}
+
+
+p{
+  font-weight: bold;
+  margin-top: 20px;
+}
+p:hover{
+  text-decoration: underline;
+
+  cursor: pointer;
+}
+#div1{
+  width: 400px;
+  /* margin: 600px; */
+  margin-top: 10% !important;
+  height: 400px !important;
+  background-image: url(https://img.freepik.com/free-vector/realistic-black-shimmer-background_23-2150083461.jpg?semt=ais_hybrid);
+padding-top: 30px;
+  margin: auto;
+  border-radius: 20px;
+  /* border: 1px solid black; */
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0px 0px 6px 3px gray;
+  text-align: center;
+  height: auto;
+  background-color: gray;
+
+}
+
+button{
+  width: 60%;
+  margin-top: 30px;
+  cursor: pointer;
+  height: 40px;
+  font-weight: bold;
+  font-size: 17px;
+  /* font-size: 10px; */
+  border-radius: 20px;
+}
+
+input{
+  width: 80%;
+  height: 30px;
+  border-radius: 10px;
+  color: white;
+  padding-left: 20px;
+  background-color: transparent;
+  /* border: 2px solid white; */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.511);
+  margin-top: 10px;
+}
+h1{
+  /* margin-top: 30%; */
+  text-decoration: underline;
+  color: white;
+}
+
+
+input:focus{
+  outline: none;
+}
