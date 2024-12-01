@@ -20,9 +20,6 @@ function App() {
             .then((res) => {
               setarr(res)
 
-
-              
-
             })
             .catch((er) => {
               console.log(er);
@@ -30,16 +27,15 @@ function App() {
             })
         }, [])
 
-        
+    
       }
       {console.log(arr)}
 
 <div id='main' className='flex justify-evenly  flex-wrap'>
       {arr.map((e)=>{
-        return <div className='w-[30%]'>
-          <img src={e.image} alt=""  width='200px' /> 
-          <h4>{e.title}  </h4>
-          <p>{e.description}</p>
+        return <div className='w-[23%] border-[black] flex-wrap flex justify-evenly border rounded-[10px] p-[10px]'>
+          <img src={e.image} alt=""  width='200px'  /> 
+          <h4 className='mt-[20px]'>{e.title}  </h4>
           <p> $ {e.price} </p>
            </div>
       })}
