@@ -15,7 +15,7 @@ function Footer()
          <i class="ri-arrow-right-s-fill text-white"></i>  <a href="" class="text-white" id="ft-a">Corporate Information</a>
         
     </div>
-    <div ><br/>
+    <div >  <br/>
         <p class="text-white opacity-50">GROUP COMPANIES</p><br/>
 
           <i class="ri-arrow-right-s-fill text-white"></i> <a href="" class="text-white" id="ft-a">Myntra</a><br/>
