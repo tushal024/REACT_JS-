@@ -25,23 +25,11 @@ function Products(){
                 console.log(er);
                 
             })
-
-
         },[])
-
-
-        
-        
-        
-        
         return(
             <>
             < Productlist  data={arr} />
-           
             </>
         )
-        
-
-     
 }
 export default Products
