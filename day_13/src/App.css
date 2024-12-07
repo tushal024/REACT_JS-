@@ -2,3 +2,23 @@
   /* align-items: center; */
   margin: auto;
 }
+
+
+#ffo{
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+#ffo p{
+  margin-left: 60px;
+  color: rgb(255, 0, 0);
+  margin-top: 5px;
+  margin-bottom: -10px;
+  /* border: 1px solid red; */
+}
+
+
+#tt1:focus {
+  /* border: 2px solid blue;
+  background-color: lightyellow; */
+}
