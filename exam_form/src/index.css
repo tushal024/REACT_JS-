@@ -22,6 +22,10 @@ input{
   width: 50%;
   margin-left: 25%;
   font-size: 20px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  /* background-color: black ; */
   height: 40px;
 }
 
@@ -42,3 +46,14 @@ select{
 margin-left: 45px;
 margin-bottom: 0px;
 }
+
+#but:disabled {
+  background-color: gray;  /* Light gray background */
+  color: white;             /* Darker gray text */
+  cursor: not-allowed;     /* Change the cursor to indicate it's disabled */
+}
+
+
+
+
+

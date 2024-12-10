@@ -1,156 +1,133 @@
+import { use } from "react"
 import { useState } from "react"
 
-
-function Form(){
-
-    
-
-    let[b1,setb1]=useState(true)
-    let[b2,setb2]=useState(true)
-    let[b3,setb3]=useState(true)
-    let[b4,setb4]=useState(true)
-
-    let[ss,setss]=useState(true)
-    
-    let[obj,setobj]=useState({
-        p_name:"",
-        price:"",
-        des:"",
-        img:""
-
+function ProductForm() {
+    let [state, setState] = useState({
+        name: "",
+        price: "",
+        category: "",
+        des: "",
+        img: ""
     })
 
 
-    function change(t){
-
-        let {name,value}= t.target
-
-     
-        
-
-        setobj({...obj,[name]:value})
-
-    }
-
+    let[ss,setss]=useState(true)
+    let [nameErr, setnameErr] = useState(false)
+    let [priceErr, setpriceErr] = useState(false)
+    let [desErr, setdesErr] = useState(false)
+    let [imgErr, setimgErr] = useState(false)
     
 
-    function foc(t){
-        let{name,value}=t.target
-        
-        if(name==  "p_name"){
-            setb1(true)
-        }
-        if(name==  "price"){
-            setb2(true)
-        }
-        if(name==  "des"){
-            setb3(true)
-        }
-        if(name==  "img"){
-            setb4(true)
-        }
-        
+    let [arr, setarr] = useState([])
 
-       
-    
+
+    const handle = (e) => {
+
+        const { name, value } = e.target
+
+        setState({ ...state, [name]: value })
+
+        if( e.target.value>0 ){
+
+            setss(false)
+
+            
+        }
+
+
     }
+    const SubmitClick = (e) => {
+        e.preventDefault()
+        setarr([...arr, state])
+        console.log(state)
 
-    function blar(t){
-        let{name,value}=t.target
-        
-        
-        if(name  == "p_name" && value.length  <  3){
-            
-            setb1(false)
-            console.log(b1);
+        if (nameErr == false && priceErr == false && desErr == false) {
+            seton(false)
+            alert("form submit successfuly")
+        }
+        else {
+
+            alert("place enter valide data")
 
         }
 
-        if(name  == "price" && value >=  0  ){
-            
-            setb2(false)
-            console.log(b1);
+        setState({
+            name: "",
+            price: "",
+            category: "",
+            des: "",
+            img: ""
+        })
 
-        }
-
-        if(name  == "des" && value.length >  300  ){
-            
-            setb3(false)
-            console.log(b1);
-
-        }
-
-        if(name  == "img" && value.length   <=  0    ){
-            
-            setb4(false)
-            console.log(b1);
-
-        }
-
-
-    
     }
+    const blurClick = (e) => {
+        let { name, value } = e.target
+        if (name == "name" && value.length < 3) {
+            setnameErr(true)
 
+            document.getElementById("brr").style.borderBlockColor = "red"
+        }
+        if (name == "price" && value <= 0) {
+            setpriceErr(true)
 
-
-    function sub(t){
-        t.preventDefault()
-        let{name,value}=t.target
-
-        console.log("success....");
+            document.getElementById("brr1").style.borderBlockColor = "red"
+            
+        }
+        if (name == "des" && value.length > 200) {
+            setdesErr(true)
+            document.getElementById("brr3").style.borderBlockColor = "red"
+            
+        }
+        if (name == "img") {
+            setimgErr(true)
         
-       
+        }
 
-        console.log(obj);
-
-        
     }
+    const focusClick = (e) => {
+        let { name } = e.target
+        if (name == "name") {
+            setnameErr(false)
+              document.getElementById("brr").style.borderBlockColor = "black"
+        }
+        if (name == "price") {
+            setpriceErr(false)
+             document.getElementById("brr1").style.borderBlockColor = "black"
+        }
+        if (name == "des") {
+            setdesErr(false)
+        }
+        if (name == "img") {
+            setimgErr(false)
+        }
 
+    }
+    return <>
 
-
-
-    return(
-        <>
-            <div className="main">
-                
-                <form action="" onSubmit={sub}>
-                    <h1 className="cc">Add Product</h1>
-
-
-                    <input type="text"  onFocus={foc}  onBlur={blar}  onChange={change} name="p_name"    placeholder="Product Name..."   /><br />
-                    {b1  ==  false ? <p  className="ppp"  >  Enter Product Name... </p> : ""  }
-                    <input type="text" onBlur={blar}       onFocus={foc} onChange={change}   name="price" placeholder="Product Price..." /><br />
-                    {b2  ==  false ? <p  className="ppp"  > Enter Product Price... </p> : ""  }
-        
-
-        <select name="Category" onChange={change} id="">
-
-
-
-            <option value="Electronics">  Electronics </option>
-            <option value="Clothing">  Clothing</option>
-            <option value="Groceries"> Groceries </option>
-            <option value="Books"> Books </option>
-        </select>
-
-
-
-
-                    <input type="text" onBlur={blar}     onFocus={foc} onChange={change} name="des"  placeholder="Description..." /><br />
-                    {b3  ==  false ? <p  className="ppp"  > Enter Description...  </p> : ""  }
-                    <input type="text" onBlur={blar}     onFocus={foc} onChange={change} name="img"  placeholder="Product Image..." /><br />
-                    {b4  ==  false ? <p  className="ppp"  >  Enter Product Image... </p> : ""  }
-                    <input type="submit"  className="bt"    id="but"  placeholder="" /><br />
-
-
-
-                </form>
-                </div>    
-        </>
-    )
+        <form action="" className="main" onSubmit={SubmitClick}>
+            <h3 className="cc">...PRODUCT FORM...</h3>
+            <input type="text" id="brr" autoFocus name="name" value={state.name} placeholder="Product Name" onChange={handle} onBlur={blurClick} onFocus={focusClick} /><br />
+            {nameErr == true ? <p className="ppp" >Must be at least 3 characters long.</p> : ""}
+            <input type="number" id="brr1" name="price" value={state.price} placeholder="price" onChange={handle} onBlur={blurClick} onFocus={focusClick} /><br />
+            {priceErr == true ? <p className="ppp" >Must be a positive number.</p> : ""}
+            <select name="category" value={state.category} onChange={handle}>
+                <option value="">Category</option>
+                <option value="electronics">Electronics</option>
+                <option value="clothing">Clothing</option>
+                <option value="grocerise">Grocerise</option>
+                <option value="books">Books</option>
+            </select><br />
+            <input type="text" id="brr3" name="des" value={state.des} placeholder="Description" onChange={handle} onBlur={blurClick} onFocus={focusClick} /><br />
+            {desErr == true ? <p className="ppp" >Maximum of 200 characters.</p> : ""}
+            <input type="file" id="" name="img" value={state.img} placeholder="Image" onChange={handle} onBlur={blurClick} onFocus={focusClick} /><br />
+            {imgErr == true ? <p className="ppp" >Must only accept image files (JPEG, PNG).</p> : ""}
+            <input  disabled={ ss} className="v"  type="submit" id="but" />
+        </form>
+    </>
 }
 
 
 
 
-export default Form
+
+            export default ProductForm
