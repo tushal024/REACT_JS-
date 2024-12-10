@@ -40,9 +40,10 @@ function ProductForm() {
         e.preventDefault()
         setarr([...arr, state])
         console.log(state)
+        alert("form submit successfuly")
 
         if (nameErr == false && priceErr == false && desErr == false) {
-            seton(false)
+        
             alert("form submit successfuly")
         }
         else {
@@ -120,7 +121,7 @@ function ProductForm() {
             <input type="text" id="brr3" name="des" value={state.des} placeholder="Description" onChange={handle} onBlur={blurClick} onFocus={focusClick} /><br />
             {desErr == true ? <p className="ppp" >Maximum of 200 characters.</p> : ""}
             <input type="file" id="" name="img" value={state.img} placeholder="Image" onChange={handle} onBlur={blurClick} onFocus={focusClick} /><br />
-            {imgErr == true ? <p className="ppp" >Must only accept image files (JPEG, PNG).</p> : ""}
+            {/* {imgErr == true ? <p className="ppp" >Must only accept image files (JPEG, PNG).</p> : ""} */}
             <input  disabled={ ss} className="v"  type="submit" id="but" />
         </form>
     </>
