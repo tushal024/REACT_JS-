@@ -1,0 +1,44 @@
+.main{
+  width: 400px;
+  margin: auto;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  border: 1px solid black;
+}
+
+
+input{
+  width: 80%;
+  margin-left: 10%;
+  height: 30px;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+
+
+#but{
+  width: 50%;
+  margin-left: 25%;
+  font-size: 20px;
+  height: 40px;
+}
+
+select{
+  width: 85%;
+  height: 36px;
+  margin-left: 10%;
+  padding-left: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.cc{
+  text-align: center;
+}
+
+.ppp{
+  color: red;
+margin-left: 45px;
+margin-bottom: 0px;
+}
