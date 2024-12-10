@@ -50,6 +50,13 @@ function Form() {
         
       
         console.log(arr);
+
+        document.getElementById("tt1").value=""
+
+
+    
+
+
         
     }
 
@@ -174,7 +181,7 @@ function Form() {
 
             <form action="" id='ffo' className='' onSubmit={sub}>
                 <h1 className='text-center   text-[30px]' >SignUp</h1>
-                <input type="text"  onFocus={focc} onBlur={bll} name="f_name" onChange={data_i} className='border border-[black] w-[400px] h-[40px] ms-[50px]   ps-[20px]  rounded-[10px] mt-[16px] ' placeholder='First Name' id="tt1" /> <br />
+                <input type="text"   onFocus={focc} onBlur={bll} name="f_name" onChange={data_i} className='border border-[black] w-[400px] h-[40px] ms-[50px]   ps-[20px]  rounded-[10px] mt-[16px] ' placeholder='First Name' id="tt1" /> <br />
 
                 {f_n_e == true ?    <p > *Enter Valid Name... </p> : ""}
 
