@@ -1,5 +1,6 @@
 import { use } from "react"
 import { useState } from "react"
+import Show from "./show"
 
 function ProductForm() {
     let [state, setState] = useState({
@@ -10,6 +11,9 @@ function ProductForm() {
         img: ""
     })
 
+    let[mbt,setmbt]=useState(true)
+
+    
 
     let[ss,setss]=useState(true)
     let [nameErr, setnameErr] = useState(false)
@@ -31,8 +35,10 @@ function ProductForm() {
 
             setss(false)
 
-            
         }
+
+        console.log(e.img);
+        
 
 
     }
@@ -40,7 +46,7 @@ function ProductForm() {
         e.preventDefault()
         setarr([...arr, state])
         console.log(state)
-        alert("form submit successfuly")
+        // alert("form submit successfuly")
 
         if (nameErr == false && priceErr == false && desErr == false) {
         
@@ -60,6 +66,9 @@ function ProductForm() {
             img: ""
         })
 
+
+        setmbt(true)
+
     }
     const blurClick = (e) => {
         let { name, value } = e.target
@@ -72,19 +81,16 @@ function ProductForm() {
             setpriceErr(true)
 
             document.getElementById("brr1").style.borderBlockColor = "red"
-            
         }
         if (name == "des" && value.length > 200) {
             setdesErr(true)
             document.getElementById("brr3").style.borderBlockColor = "red"
-            
         }
         if (name == "img") {
             setimgErr(true)
-        
         }
-
     }
+
     const focusClick = (e) => {
         let { name } = e.target
         if (name == "name") {
@@ -103,30 +109,56 @@ function ProductForm() {
         }
 
     }
+    function hs(){
+        setmbt(false)
+    }
+
+    let img_show=(t)=>{
+
+        let file = t.target.file[0]
+        if(file && ["img/jpeg","img/png"].includes(file.type) ){
+
+            setState({...state,img:file})
+            setimgErr(false)  
+        }
+        else{
+                setimgErr(true)                
+        }
+        console.log(file);
+         
+    }
     return <>
 
-        <form action="" className="main" onSubmit={SubmitClick}>
-            <h3 className="cc">...PRODUCT FORM...</h3>
-            <input type="text" id="brr" autoFocus name="name" value={state.name} placeholder="Product Name" onChange={handle} onBlur={blurClick} onFocus={focusClick} /><br />
-            {nameErr == true ? <p className="ppp" >Must be at least 3 characters long.</p> : ""}
-            <input type="number" id="brr1" name="price" value={state.price} placeholder="price" onChange={handle} onBlur={blurClick} onFocus={focusClick} /><br />
-            {priceErr == true ? <p className="ppp" >Must be a positive number.</p> : ""}
-            <select name="category" value={state.category} onChange={handle}>
-                <option value="">Category</option>
-                <option value="electronics">Electronics</option>
-                <option value="clothing">Clothing</option>
-                <option value="grocerise">Grocerise</option>
-                <option value="books">Books</option>
-            </select><br />
-            <input type="text" id="brr3" name="des" value={state.des} placeholder="Description" onChange={handle} onBlur={blurClick} onFocus={focusClick} /><br />
-            {desErr == true ? <p className="ppp" >Maximum of 200 characters.</p> : ""}
-            <input type="file" id="" name="img" value={state.img} placeholder="Image" onChange={handle} onBlur={blurClick} onFocus={focusClick} /><br />
-            {/* {imgErr == true ? <p className="ppp" >Must only accept image files (JPEG, PNG).</p> : ""} */}
-            <input  disabled={ ss} className="v"  type="submit" id="but" />
-        </form>
+    { mbt== true ?      <button onClick={hs}  > Add Product </button>    : 
+    
+    <form action="" className="main" onSubmit={SubmitClick}>
+    <h3 className="cc">...PRODUCT FORM...</h3>
+    <input type="text" id="brr" autoFocus name="name" value={state.name} placeholder="Product Name" onChange={handle} onBlur={blurClick} onFocus={focusClick} /><br />
+    {nameErr == true ? <p className="ppp" >Must be at least 3 characters long.</p> : ""}
+    <input type="number" id="brr1" name="price" value={state.price} placeholder="price" onChange={handle} onBlur={blurClick} onFocus={focusClick} /><br />
+    {priceErr == true ? <p className="ppp" >Must be a positive number.</p> : ""}
+    <select name="category" value={state.category} onChange={handle}>
+        <option value="">Category</option>
+        <option value="electronics">Electronics</option>
+        <option value="clothing">Clothing</option>
+        <option value="grocerise">Grocerise</option>
+        <option value="books">Books</option>
+    </select><br />
+    <input type="text" id="brr3" name="des" value={state.des} placeholder="Description" onChange={handle} onBlur={blurClick} onFocus={focusClick} /><br />
+    {desErr == true ? <p className="ppp" >Maximum of 200 characters.</p> : ""}
+    <input type="file" id="" name="img"  placeholder="Image" onChange={img_show} onBlur={blurClick} onFocus={focusClick} /><br />
+    {imgErr == true ? <p className="ppp" >Must only accept image files (JPEG, PNG).</p> : ""}
+    <input  disabled={ss} className="v"  type="submit" id="but" />
+    </form>
+    
+    }
+
+       
+
+    {   mbt== true ? <Show  pass={arr} />  : "" }
+   
     </>
 }
-
 
 
 
