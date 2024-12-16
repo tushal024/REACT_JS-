@@ -1,0 +1,15 @@
+.main
+{
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  /* border: 1px solid black; */
+}
+
+.ss{
+  
+  border: 1px solid rgba(0, 0, 0, 0.47);
+  width: 200px;
+  height: auto;
+
+}
