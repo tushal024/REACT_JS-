@@ -27,17 +27,6 @@ function Show({pass}){
     )
 }
 
-
-
-
-
-
  export let A = Hoc(Show)
-
-
-
-
-
-
 
 export default Show

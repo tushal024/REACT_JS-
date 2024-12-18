@@ -27,9 +27,6 @@ function Product(){
 
     return (
         <>
-
-            
-
                     <A   pass={arr} con={st} />
         </>
     )
