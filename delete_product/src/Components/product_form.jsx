@@ -67,6 +67,16 @@ function Form() {
 
     }
 
+// .........................................................................................
+function edit(id){
+    console.log(id);
+    
+
+}
+
+
+
+
     return (
         <>
             <form action="" onSubmit={sub} >
@@ -79,7 +89,7 @@ function Form() {
 
             </form>
 
-            <Show  pass={arr} delete_1={delete_1} />
+            <Show  pass={arr} delete_1={delete_1}   edit ={edit} />
         </>
     )
 

@@ -1,6 +1,6 @@
 
 
-function Show({pass,delete_1}){
+function Show({pass,delete_1,edit}){
 
     return (
         <div className="main" >
@@ -15,7 +15,7 @@ function Show({pass,delete_1}){
                     <h4> {e.des} </h4>
 
                     <button  onClick={()=>{delete_1(e.id)}} >DELETE</button>
-                    <button>EDIT</button>
+                    <button   onClick={()=>{edit(e.id)}} >EDIT</button>
                     
                 </div>
                 </div>

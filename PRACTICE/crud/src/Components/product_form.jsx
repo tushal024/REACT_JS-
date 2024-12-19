@@ -32,6 +32,9 @@ function Form() {
 
     const sub = (t) => {
         t.preventDefault()
+
+        settr(false)
+
         setarr([...arr, { ...pro, id: v4() }])
         console.log(arr);
 
@@ -113,7 +116,7 @@ function Form() {
 
         let{value}= r.target
        
-        let ts=  arr.filter((e)=>{
+        let ts=   arr.filter((e)=>{
 
             if(value=="down"){
                 return e.price<=500
@@ -125,11 +128,18 @@ function Form() {
                 return e.price>1000
             }
             if(value == "old"){
-                return e
+                // console.log(arr);
+                return (
+                    e
+                    
+                )
             }
 
             
         })
+
+     
+
         setd_arr(ts)
         
         
@@ -141,7 +151,26 @@ function Form() {
         settr(true)
 
 
+
+     
+
     }
+
+
+   
+    function sort1 (s){
+        
+        
+        
+        let tus= arr.sort((a, b) => b.price - a.price )
+        // console.log(tus);
+        settr(true)
+
+        setd_arr(tus)
+
+    }   
+
+
 
 
     return (
@@ -154,6 +183,10 @@ function Form() {
                     <option value="mid"> 500 TO 1000   </option>
                     <option value="up">  1000 TO UP  </option>
                 </select>
+
+
+
+                <button  onClick={sort1} type="button" >  SORT </button> 
 
                 <input type="text" placeholder="Heading..." value={pro.name1} onChange={change} name="name1" />
                 <input type="text" placeholder="Image URL..." value={pro.img} onChange={change} name="img" />
