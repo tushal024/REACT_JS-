@@ -7,3 +7,11 @@
 .ss{
   margin-left: 10px;
 }
+
+*{
+  color: white;
+}
+
+#dd{
+background-color: red;
+}

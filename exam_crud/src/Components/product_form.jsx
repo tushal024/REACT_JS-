@@ -208,6 +208,7 @@ function Form() {
 
     return (
         <>
+        <h1>Form </h1>
             <form action="" onSubmit={sub} >
                 <select name="" id="sel" onChange={sort1} >
                     <option value="old"> ...Sorting... </option>
@@ -217,7 +218,7 @@ function Form() {
 
                 </select>
 
-                <input type="text" placeholder="Heading..." value={pro.name1} onChange={change} name="name1" />
+                <input type="text" placeholder="Heading..." value={pro.name1} onChange={change} name="name1"  />
                 <input type="text" placeholder="Image URL..." value={pro.img} onChange={change} name="img" />
                 <input type="number" placeholder="Price..." value={pro.price} onChange={change} name="price" />
                 <input type="text" placeholder="Des....." value={pro.des} onChange={change} name="des" />
