@@ -3,7 +3,9 @@
   margin-top: 50px;
 }
 
-
+select,option{
+  background-color: black;
+}
 .ss{
   margin-left: 10px;
 }
