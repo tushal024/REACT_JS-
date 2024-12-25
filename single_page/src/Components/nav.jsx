@@ -8,6 +8,7 @@ function Nav() {
         <Link to="" ></Link>
         <Link to="/Product" >Product</Link>
         <Link to="/About" >  About </Link>
+        <Link to="/Cart" > Cart </Link>
         <Link to="/Single_page/:id" >  Single Page </Link>
 
 

@@ -10,6 +10,7 @@ function Single_page() {
 
     useEffect(()=>{
 
+      
 
 
     },[])

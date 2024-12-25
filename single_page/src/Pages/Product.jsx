@@ -24,7 +24,7 @@ function Product() {
         })
         
 
-    },[])
+    },[arr])
 
     console.log(arr);
     
