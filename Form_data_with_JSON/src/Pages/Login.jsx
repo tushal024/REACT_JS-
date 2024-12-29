@@ -16,11 +16,6 @@ function Login() {
 
         e.preventDefault()
 
-
-        
-   
-      
-
         fetch(`http://localhost:3000/user?email=${obj.email}`)
 
             .then((r) => {
@@ -35,14 +30,17 @@ function Login() {
                     // console.log();
                     if(res[0].pass == obj.pass){
                         alert("Login Success....🤩")
+                        localStorage.setItem("Tushal",true)
                     }
                     else{
                         alert("Plese Enter Valid Password....🙄")
+                        localStorage.setItem("Tushal",false)
                     }
                     
                 }
                 else{
                     alert("Plese Registor Your Email....📍")
+                    localStorage.setItem("Tushal",false)
                 }
 
             })

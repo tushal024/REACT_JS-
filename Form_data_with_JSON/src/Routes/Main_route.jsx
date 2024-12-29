@@ -5,6 +5,7 @@ import Login from '../Pages/Login'
 import Signup from '../Pages/Signup'
 import Product from '../Pages/Product'
 import Navbar from '../Components/Navbar'
+import Private from '../Components/Private'
 
 function Main_route() {
   return (
@@ -16,7 +17,14 @@ function Main_route() {
             <Route path='/' element={<Home/>} ></Route>
             <Route path='/Login' element={<Login/>} ></Route>
             <Route path='/Signup' element={<Signup/>} ></Route>
-            <Route path='/Product' element={<Product/>} ></Route>
+            <Route path='/Product' element={
+              <Private >
+                
+              <Product/>  
+
+              </Private>
+              
+              } ></Route>
          </Routes>
 
     </div>

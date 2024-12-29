@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Mapping from '../Components/Mapping';
+import Show from './Show';
 
 function Product() {
 
@@ -11,12 +12,12 @@ function Product() {
 
     })
 
-useEffect(()=>{
-    fetch(`http://localhost:3000/data`)
-    .then((r)=>{
-        return r.json();
-    })
-},[])
+// useEffect(()=>{
+//     fetch(`http://localhost:3000/data`)
+//     .then((r)=>{
+//         return r.json();
+//     })
+// },[])
 
 
 
@@ -25,21 +26,18 @@ function change1(e){
 
         setob({...ob,[name]:value})
         // console.log(ob);
-        
-
- 
         }
 
     function subb(e){
         e.preventDefault()
 
-        fetch(`http://localhost:3000/user`,{
+        fetch(`http://localhost:3000/data`,{
             method:"POST",
             headers:{
                 "content-type":"application/json"
             },
 
-            body:JSON.stringify(obJJ)
+            body:JSON.stringify(ob)
 
         })
         .then((r)=>{
@@ -47,7 +45,7 @@ function change1(e){
         })
         .then((res)=>{
             console.log(res)
-            setss([...ss,res])
+            // setss([...ss,res])
          
 
         })
@@ -56,12 +54,10 @@ function change1(e){
 
             
         })
-        
-
-
-
-
+    
     }
+    console.log(ss);
+    
 
   return (
     <div>
@@ -75,7 +71,8 @@ function change1(e){
         <input type="submit" />
         </form>
 
-        <Mapping  ss={ss} />
+        {/* <Mapping  ss={ss} /> */}
+        <Show/>
       
     </div>
   )
