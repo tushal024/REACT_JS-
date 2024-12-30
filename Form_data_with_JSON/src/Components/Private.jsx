@@ -8,7 +8,7 @@ function Private({children}) {
     <div>
 
            { localStorage.getItem("Tushal") == "true"  ? children : <div>
-            Plese Login Your Account  ....
+            Plese Login Your  Account🙄🙄😶😶😶
             
               <Link  to="/Login"> Go To Login </Link> </div> }
 
