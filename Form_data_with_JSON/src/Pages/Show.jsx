@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-function Show() {
+function Show({ob,setob}) {
     
     const[AA,setAA]=useState([])
 
@@ -24,7 +24,34 @@ function Show() {
 
     },[AA])
 
+
+
+    
+
     // console.log(AA);
+
+
+    function del(id){
+      fetch(`http://localhost:3000/data/${id}`,{
+        method:"DELETE",
+      
+        
+      })
+     
+
+    }
+
+    function ed(id){
+
+      AA.filter((e)=>{
+        if(e.id== id){
+          setob({...ob,...e})
+        }
+        
+      })
+
+    }
+
     
 
   return (
@@ -35,6 +62,12 @@ function Show() {
                  <h5> {e.img} </h5>
                             <h5> {e.title} </h5>
                             <h3> {e.price} </h3>
+                            <button onClick={()=>del(e.id)} >DELETE</button>
+                            <button onClick={()=>ed(e.id)} >  EDIT</button>
+
+                            {/* <button  onClick={ts()}> EDIT OKK </button> */}
+
+
 
             </div>
         )

@@ -17,14 +17,32 @@
       "name": "tt",
       "email": "tt",
       "pass": "tt"
+    },
+    {
+      "id": "b9b7",
+      "name": "Tushal",
+      "email": "tushal24@gmail.com",
+      "pass": "54321"
     }
   ],
   "data": [
     {
-      "id": "a916",
-      "title": "dasd",
-      "img": "sadasd",
-      "price": "dsad"
+      "id": "9079",
+      "title": "das",
+      "img": "d",
+      "price": "d"
+    },
+    {
+      "id": "372c",
+      "title": "das",
+      "img": "d",
+      "price": "d"
+    },
+    {
+      "id": "ad83",
+      "title": "das",
+      "img": "das",
+      "price": "ddasd"
     }
   ]
 }

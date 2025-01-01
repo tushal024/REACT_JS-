@@ -64,8 +64,8 @@ function Login() {
         <div>
             <h1> LOGIN </h1>
             <form action="" onSubmit={sub1}>
-                <input type="text" name='email' onChange={change} /> <br /> <br />
-                <input type="text" name='pass' onChange={change} /> <br /> <br />
+                <input type="text" name='email' onChange={change}  placeholder='Enter Your Email...' /> <br /> <br />
+                <input type="text" name='pass' onChange={change}   placeholder='Enter Your Password...'/> <br /> <br />
                 <input type="submit" />
 
             </form>

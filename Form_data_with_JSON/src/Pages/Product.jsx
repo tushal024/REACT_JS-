@@ -57,6 +57,7 @@ function change1(e){
     
     }
     console.log(ss);
+
     
 
   return (
@@ -64,15 +65,16 @@ function change1(e){
         <h1> Add  Product </h1>
         <form action="" onSubmit={subb}>
 
-        <input type="text" name='title'  placeholder='Title' onChange={change1}    />    <br /><br />
-        <input type="text" name='img' placeholder='Img' onChange={change1}    /> <br /><br />
-        <input type="text" name='price' placeholder='Price' onChange={change1}    /> <br /><br />
+        <input type="text" value={ob.title}  name='title'  placeholder='Title' onChange={change1}    />    <br /><br />
+        <input type="text" value={ob.img}  name='img' placeholder='Img' onChange={change1}    /> <br /><br />
+        <input type="text" value={ob.price}  name='price' placeholder='Price' onChange={change1}    /> <br /><br />
+        <input type="button"  value={"EDIT OKKK"} name="" id="" />
         
         <input type="submit" />
         </form>
 
         {/* <Mapping  ss={ss} /> */}
-        <Show/>
+        <Show ob={ob} setob={setob}  />
       
     </div>
   )

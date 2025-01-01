@@ -112,7 +112,7 @@ function Form() {
         setbt(id)
 
 
-     let N_arr=   arr.map((e)=>{
+     let N_arr =   arr.map((e)=>{
             if(e.id== id){
                 return (
                     setpro({...pro,...e})

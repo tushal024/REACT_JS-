@@ -54,9 +54,9 @@ function Signup() {
 
       <form action="" onSubmit={sub}>
 
-        <input type="text" name='name'   onChange={change} /> <br /> <br />
-        <input type="text" name='email'  onChange={change}  /> <br /> <br />
-        <input type="text" name='pass'   onChange={change} /> <br /> <br />
+        <input type="text" name='name'  placeholder='Enter Your Username...' onChange={change} /> <br /> <br />
+        <input type="text" name='email'   placeholder='Enter Your Email...'  onChange={change}  /> <br /> <br />
+        <input type="text" name='pass'    placeholder='Enter Your Password...'  onChange={change} /> <br /> <br />
         <input type="submit" />
 
       </form>
