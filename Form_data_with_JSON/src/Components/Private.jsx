@@ -7,10 +7,10 @@ function Private({children}) {
   return (
     <div>
 
-           { localStorage.getItem("Tushal") == "true"  ? children : <div>
-            Plese Login Your  Account🙄🙄😶😶😶
+           { localStorage.getItem("Tushal") == "true"  ? children : <div  className='text-center mt-[20%]' >
+           First, Plese Login Your  Account🙄....?
             
-              <Link  to="/Login"> Go To Login </Link> </div> }
+              <Link  to="/Login"> <p  className='hover:underline hover:text-[blue]'> Go To Login  </p> </Link> </div> }
 
     </div>
   )

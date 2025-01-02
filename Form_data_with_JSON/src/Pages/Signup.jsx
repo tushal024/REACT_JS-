@@ -49,15 +49,15 @@ function Signup() {
     }
 
   return (
-    <div>
-      <h1>Signup</h1>
+    <div className=' w-[30%] pb-[50px] pt-[30px] rounded-[10px]  border-[darkgray] border  shadow-lg shadow-gray-500/50  m-[auto] mt-[50px]' >
+      <h1 className='text-[30px] font-[600] text-center' >Signup</h1>
 
-      <form action="" onSubmit={sub}>
+      <form action="" onSubmit={sub}  className=' mt-[10px] w-[100%] m-[auto]  border-[gray]' >
 
-        <input type="text" name='name'  placeholder='Enter Your Username...' onChange={change} /> <br /> <br />
-        <input type="text" name='email'   placeholder='Enter Your Email...'  onChange={change}  /> <br /> <br />
-        <input type="text" name='pass'    placeholder='Enter Your Password...'  onChange={change} /> <br /> <br />
-        <input type="submit" />
+        <input type="text" name='name'   className='border  rounded-[7px]  w-[90%]  h-[35px] ms-[5%] ps-[20px]' placeholder='Enter Your Username...' onChange={change} /> <br /> <br />
+        <input type="text" name='email'  className='border  rounded-[7px]  w-[90%]  h-[35px] ms-[5%] ps-[20px]'   placeholder='Enter Your Email...'  onChange={change}  /> <br /> <br />
+        <input type="password" name='pass'   className='border  rounded-[7px]  w-[90%]  h-[35px] ms-[5%] ps-[20px]'   placeholder='Enter Your Password...'  onChange={change} /> <br /> <br />
+        <input type="submit" className='w-[50%] border  rounded-[7px] bg-[black]  text-[white] ms-[25%] h-[35px] ' />
 
       </form>
     </div>

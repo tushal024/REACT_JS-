@@ -115,11 +115,8 @@ function Form() {
      let N_arr =   arr.map((e)=>{
             if(e.id== id){
                 return (
-                    setpro({...pro,...e})
-                    
+                    setpro({...pro,...e})   
                 )
-
-              
             }
 
             else{
@@ -131,37 +128,37 @@ function Form() {
 
     }
 
-    function new_edit(e){
+    // function new_edit(e){
        
-          let st=arr.map((e)=>{
-            if(e.id== bt){
+    //       let st=arr.map((e)=>{
+    //         if(e.id== bt){
                  
-                return (
-                    {...e,...pro}
-                )
-            }
-            else{
-                return e
-            }
+    //             return (
+    //                 {...e,...pro}
+    //             )
+    //         }
+    //         else{
+    //             return e
+    //         }
 
           
 
-        })
+    //     })
 
-        setarr(st)
-        setbt("")
+    //     setarr(st)
+    //     setbt("")
 
-        setpro({
+    //     setpro({
 
-            name1:"",
-            img: "",
-            price: "",
-            des: ""
+    //         name1:"",
+    //         img: "",
+    //         price: "",
+    //         des: ""
 
-        })  
+    //     })  
         
 
-    }
+    // }
 
     return (
         <>
