@@ -1,0 +1,14 @@
+
+button{
+
+    width: auto;
+    height: 24px;
+    margin-left: 10px;
+    border: 1px solid gray;
+    /* padding: 5px; */
+
+}
+
+h1{
+    color: blue;
+}
