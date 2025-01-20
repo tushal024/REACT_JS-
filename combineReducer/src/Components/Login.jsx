@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, useNavigate } from 'react-router-dom';
+import { Act } from '../Redux/Action';
 
 function Login() {
 
@@ -25,27 +26,11 @@ function Login() {
 
     }
 
-
-
     function sub(e){
         e.preventDefault()
-        diss({type:"Loading"})
 
-
-        axios.get(`http://localhost:3000/user?email=${obj.email}`)
-        .then((res) =>{
-
-            console.log(res.data)
-            diss({type:"isLogin",payload:res.data[0].username})
-            navv('/product')
-        } 
-        
-        )
-        .catch((er)=>{
-            console.log(er);
-            diss({type:"error"})
-            
-        })
+        // Act(diss,obj.email);
+        diss(Act)(obj.email)
 
     }
     console.log(el)

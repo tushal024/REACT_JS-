@@ -8,9 +8,6 @@ let St = {
     error: false
 }
 
-
-
-
  export let Red = (state=St, { type, payload }) => {
 
     switch (type) {

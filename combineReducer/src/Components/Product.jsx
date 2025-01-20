@@ -25,8 +25,7 @@ function Product() {
         .catch((er)=>{
           console.log(er);
             disp({type:"Error"})
-          
-        })
+          })
 
     },[])
 

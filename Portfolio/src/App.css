@@ -1,0 +1,25 @@
+/* src/App.css */
+.App {
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .App-header {
+    z-index: 10;
+    position: relative;
+    color: white;
+    padding: 20px;
+    font-size: 2em;
+  }
+  
+  h1 {
+    font-size: 3em;
+  }
+  
+  p {
+    font-size: 1.5em;
+  }
+  
