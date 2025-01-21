@@ -11,11 +11,15 @@ const Comp = () => {
     <div>
       {TS}
       <br />  <br />
+      {
+        console.log("hello")
+        
+      }
 
-        <button  onClick={()=> MD()  }  >  OKK </button>
+        {/* <button  onClick={()=> MD()  }  >  OKK </button> */}
       
     </div>
   )
 }
 
-export default Comp
+export default React.memo(  Comp)
