@@ -17,7 +17,6 @@ import axios from "axios"
         console.log(res.data.products);
         dis({type:"Success",payload:res.data.products})
 
-        
     })
 
 
