@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { addDoc, collection, doc, updateDoc } from 'firebase/firestore'
 import { Mydata } from '../Firebase/Fire'
 import { useDispatch, useSelector } from 'react-redux'
+import { Navigate, useNavigate } from 'react-router-dom'
+import ProductList from './ProductList'
 
 
 const ProductForm = () => {
@@ -14,6 +16,8 @@ const ProductForm = () => {
   const [Arr, setArr] = useState([])
   let PR_id = localStorage.getItem("id")
 
+  let navv = useNavigate()
+
 
 
   let Sell = useSelector(st => st)
@@ -22,69 +26,69 @@ const ProductForm = () => {
   // console.log(Sell);
 
 
-  let ID= Sell.ProductData
+  let ID = Sell.ProductData
 
-// PASS 'ID' IN depandency Arry
-  useEffect(()=>{
-   setArr(ID) 
-  },[ID])
-
-
-
-  useEffect(()=>{
-
-
-    if (Arr.length > 0  && PR_id ) {
-
-        let product = Arr.filter((e) => {
-          if (PR_id == e.id) {
-            // console.log(e);
-            return e
-            
-            
-          
-            // setobj(e)
-           
-          }
-        })
-  
-        setobj({
-          Title: product[0].Title,
-          Price: product[0].Price,
-          URL: product[0].URL,
-  
-        })
-  
-    
-        // console.log(ss)
-        
-        // setobj(ss)
-        // console.log(obj[0]);
-        
-    
-      }
-
-  },[PR_id,Arr])
-
-//   function ED(){
-   
-    
-  
-
-//   }
+  // PASS 'ID' IN depandency Arry
+  useEffect(() => {
+    setArr(ID)
+  }, [ID])
 
 
 
-//   if(PR_id.length>0 ){
+  useEffect(() => {
 
-//     setTimeout(() => {
-      
-//       ED()
-      
-      
-//     }, 100);
 
-//   }
+    if (Arr.length > 0 && PR_id) {
+
+      let product = Arr.filter((e) => {
+        if (PR_id == e.id) {
+          // console.log(e);
+          return e
+
+
+
+          // setobj(e)
+
+        }
+      })
+
+      setobj({
+        Title: product[0].Title,
+        Price: product[0].Price,
+        URL: product[0].URL,
+
+      })
+
+
+      // console.log(ss)
+
+      // setobj(ss)
+      // console.log(obj[0]);
+
+
+    }
+
+  }, [PR_id, Arr])
+
+  //   function ED(){
+
+
+
+
+  //   }
+
+
+
+  //   if(PR_id.length>0 ){
+
+  //     setTimeout(() => {
+
+  //       ED()
+
+
+  //     }, 100);
+
+  //   }
 
 
 
@@ -110,28 +114,30 @@ const ProductForm = () => {
     e.preventDefault();
     const DataCollection = collection(Mydata, "ProductData")
 
-      if(PR_id  && Arr.length>0 ){
+    if (PR_id && Arr.length > 0) {
 
-        let T= doc(Mydata, "ProductData" , PR_id )
+      let T = doc(Mydata, "ProductData", PR_id)
 
-        updateDoc(T,obj)
-
-
-        localStorage.clear()
-
-      }
-      else{
-
-        console.log(obj);
-    addDoc(DataCollection, obj)
-
-      }
+      updateDoc(T, obj)
 
 
-    
+      localStorage.clear()
+
+      navv("/List")
+
+    }
+    else {
+
+      console.log(obj);
+      addDoc(DataCollection, obj)
+
+    }
 
 
-    
+
+
+
+
   }
 
 
@@ -150,6 +156,11 @@ const ProductForm = () => {
 
 
       </form>
+
+
+      <div>
+        {/* <ProductList/> */}
+      </div>
 
     </div>
   )

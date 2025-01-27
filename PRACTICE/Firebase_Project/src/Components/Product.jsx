@@ -53,7 +53,11 @@ const Product = () => {
 
         }
 
-
+        setobj({
+            title: "",
+            url: "",
+            price: ""
+        })
 
 
 
@@ -69,6 +73,8 @@ const Product = () => {
         })
 
         setarr(tt)
+
+        
 
 
 
@@ -111,7 +117,7 @@ const Product = () => {
 
 
     return (
-        <div className='m-[auto] border ' >
+        <div className='m-[auto]  ' >
             <form action="" onSubmit={sub} className='w-[400px] m-[auto] rounded-[5px] mt-[10px] border   text-center '   >
                 <h1 className='mt-[10px] text-[20px] underline mb-[10px]  ' > Add Product   </h1>
 
@@ -129,7 +135,7 @@ const Product = () => {
                     arr.map((e) => {
                         return (
                             <div className='w-[200px] border  mb-[10px] rounded-[7px] flex  flex-col p-[10px] ' >
-                                <img src={e.ur} alt=""  className='w-[200px]  h-[200px] m-[auto]  ' />
+                                <img src={e.url} alt=""  className='w-[200px]  h-[200px] m-[auto]  ' />
                                 {/* <p> {e.id} </p> */}
 
                                 <p className='text-[20px]   ' > {e.title}    </p>
