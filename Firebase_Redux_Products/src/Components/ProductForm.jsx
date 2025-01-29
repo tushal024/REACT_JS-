@@ -4,6 +4,7 @@ import { Mydata } from '../Firebase/Fire'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navigate, useNavigate } from 'react-router-dom'
 import ProductList from './ProductList'
+import { sub } from '../Redux/Action'
 
 
 const ProductForm = () => {
@@ -51,6 +52,8 @@ const ProductForm = () => {
 
         }
       })
+      console.log(product);
+      
 
       setobj({
         Title: product[0].Title,
@@ -104,41 +107,54 @@ const ProductForm = () => {
 
     setobj({ ...obj, [name]: value })
 
-  }
+
+    
+    //  Sell = useSelector(st => st)
+    //  Dis = useDispatch()
 
 
+    Dis({type:"FindObj", payload: obj })
 
+    console.log(Sell.obj);
 
-  const sub = (e) => {
-
-    e.preventDefault();
-    const DataCollection = collection(Mydata, "ProductData")
-
-    if (PR_id && Arr.length > 0) {
-
-      let T = doc(Mydata, "ProductData", PR_id)
-
-      updateDoc(T, obj)
-
-
-      localStorage.clear()
-
-      navv("/List")
-
-    }
-    else {
-
-      console.log(obj);
-      addDoc(DataCollection, obj)
-
-    }
-
-
-
-
-
+    localStorage.setItem("obj", JSON.stringify( obj))
+    
 
   }
+
+
+
+
+  // const sub = (e) => {
+
+  //   e.preventDefault();
+  //   const DataCollection = collection(Mydata, "ProductData")
+
+  //   if (PR_id && Arr.length > 0) {
+
+  //     let T = doc(Mydata, "ProductData", PR_id)
+
+  //     updateDoc(T, obj)
+
+
+  //     localStorage.clear()
+
+  //     navv("/List")
+
+  //   }
+  //   else {
+
+  //     console.log(obj);
+  //     addDoc(DataCollection, obj)
+
+  //   }
+
+
+
+
+
+
+  // }
 
 
 

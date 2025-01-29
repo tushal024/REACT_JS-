@@ -4,6 +4,7 @@ let face={
     "Success":false,
     "ProductData":"",
     "Error":false,
+    "obj":{}
 }
 
 
@@ -21,7 +22,10 @@ let face={
                 
          case "Error":
             return ({...state,"Loading":false,"Error":true,"Success":false })                  
-    
+
+         case "FindObj":
+                return ({...state, "obj": payload })                  
+        
         default: return state
             
     }
