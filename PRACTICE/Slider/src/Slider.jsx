@@ -16,8 +16,7 @@ const Slider = () => {
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
-
+  }
   return (
     <div className="slider-container" style={{ position: "relative", width: "640px", height:"500px",  border: "1px solid black",   margin: "auto" }}>
       <img

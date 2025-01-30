@@ -26,8 +26,6 @@ function Counter3() {
 
     dis({type: "IN" ,payload: Number (val) })
 
-
-
    }
 
 
