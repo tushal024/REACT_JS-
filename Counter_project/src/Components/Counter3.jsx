@@ -22,7 +22,7 @@ function Counter3() {
 
    function sub(e){
     e.preventDefault();
-    console.log( Number (val));
+    console.log( Number (val))
 
     dis({type: "IN" ,payload: Number (val) })
 
